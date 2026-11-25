@@ -1,0 +1,10 @@
+const BaseRepository = require('./BaseRepository');
+const {{modelName}} = require('../models/{{modelName}}');
+
+class {{modelName}}Repository extends BaseRepository {
+    constructor() {
+      super({{modelName}});
+    }
+}
+
+module.exports = {{modelName}}Repository;

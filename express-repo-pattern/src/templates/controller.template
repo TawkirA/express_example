@@ -1,0 +1,63 @@
+const {{modelName}}Repository = require('../repositories/{{modelName}}Repository');
+
+class {{modelName}}Controller {
+    constructor() {
+        this.{{modelName}}Repository = new {{modelName}}Repository();
+    }
+
+    findAll = async (req, res) => {
+        try {
+            const {{modelName}}s = await this.{{modelName}}Repository.findAll();
+            res.json({{modelName}}s);
+        } catch(err) {
+            console.log(err);
+            res.status(500).json({ message: 'Error fetching {{modelName}}s' });
+        }
+    }
+
+    findOne = async (req, res) => {
+        try {
+            const {{modelName}} = await this.{{modelName}}Repository.findOne(req.params.id);
+            if (!{{modelName}}) {
+                res.status(404).json({ message: '{{modelName}} not found' });
+            } else {
+                res.json({{modelName}})
+            }
+        } catch(err) {
+            console.log(err);
+            res.status(500).json({ message: 'Error fetching {{modelName}}' });
+        }
+    }
+
+    create = async (req, res) => {
+        try {
+            const {{modelName}} = await this.{{modelName}}Repository.create(req.body);
+            res.json({{modelName}}); 
+        } catch(err) {
+            console.log(err);
+            res.status(500).json({ message: 'Error creating {{modelName}}' });
+        }
+    }
+
+    update = async (req, res) => {
+        try {
+            const {{modelName}} = await this.{{modelName}}Repository.update(req.params.id, req.body);
+            res.json({{modelName}});
+        } catch(err) {
+            console.log(err);
+            res.status(500).json({ message: 'Error updating {{modelName}}' });
+        }
+    }
+
+    delete = async (req, res) => {
+        try {
+            await this.{{modelName}}Repository.delete(req.params.id);
+            res.json({ message: '{{modelName}} deleted successfully' });
+        } catch(err) {
+            console.error(error);
+            res.status(500).json({ message: 'Error deleting {{modelName}}' });
+        }
+    }
+}
+
+module.exports = {{modelName}}Controller;

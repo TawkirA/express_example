@@ -1,0 +1,249 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "ABC",
+        "description": "ABC API list"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/Card": {
+            "get": {
+                "tags": [
+                    "Card"
+                ],
+                "operationId": "Card.getAll",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Card"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Card"
+                ],
+                "operationId": "Card.create",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Card"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Card"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": [
+                    "Card"
+                ],
+                "operationId": "Card.update",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Card"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Card"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Card"
+                ],
+                "operationId": "Card.delete",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Card"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/Loan": {
+            "get": {
+                "tags": [
+                    "Loan"
+                ],
+                "operationId": "Loan.getAll",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Loan"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "Loan"
+                ],
+                "operationId": "Loan.create",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Loan"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Loan"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": [
+                    "Loan"
+                ],
+                "operationId": "Loan.update",
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Loan"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Loan"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "Loan"
+                ],
+                "operationId": "Loan.delete",
+                "parameters": [],
+                "responses": {
+                    "204": {
+                        "description": "Request was successful",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Loan"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "Card": {
+            "type": "object",
+            "properties": {
+                "cardId": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "cType": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "desc": {
+                    "type": "string",
+                    "maxLength": 3000
+                }
+            },
+            "required": [
+                "cardId",
+                "cType",
+                "desc"
+            ]
+        },
+        "Loan": {
+            "type": "object",
+            "properties": {
+                "loanId": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "lType": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "desc": {
+                    "type": "string",
+                    "maxLength": 3000
+                }
+            },
+            "required": [
+                "loanId",
+                "lType",
+                "desc"
+            ]
+        }
+    }
+}
